@@ -9,26 +9,26 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">FC라플</a>
+  <a class="navbar-brand" href="#">FC last play</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="./main.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">동아리 소개</a>
+        <a class="nav-link"  href="./page/introduce_page.jsp">동아리 소개</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">경기영상</a>
+        <a class="nav-link" href="./page/matchvideo_page.jsp">경기영상</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">일정예매</a>
+        <a class="nav-link" href="./page/ticket_page.jsp">일정예매</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">이외활동</a>
+        <a class="nav-link" href="./page/other_page.jsp">이외활동</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 mr-auto">
@@ -37,16 +37,16 @@
     </form>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" href="./onborading/login.jsp">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
+        <a class="nav-link" href="./onborading/insert.jsp">Sign Up</a>
       </li>
     </ul>
   </div>
 </nav>
 
-<div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel" data-interval="5000">
+<div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel" data-interval="2000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -54,13 +54,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://via.placeholder.com/800x400?text=First+Slide" alt="First slide">
+      <img class="d-block w-100"   src="https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://via.placeholder.com/800x400?text=Second+Slide" alt="Second slide">
+      <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2019/09/06/02/52/football-4455306_1280.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://via.placeholder.com/800x400?text=Third+Slide" alt="Third slide">
+      <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2019/03/03/16/32/sport-4032242_1280.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

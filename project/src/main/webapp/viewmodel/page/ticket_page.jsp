@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FC라플</title>
+<title>Insert title here</title>
 </head>
 <body>
-<%@ include file = "header/header.jsp" %>
-<h1>메인페이지</h1>
-<%@ include file = "bottom/footer.jsp" %>
+<h1>티켓구매 페이지입니다.</h1>
 </body>
 </html>
