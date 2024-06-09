@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file = "header/header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,9 @@
 <title>FC라플</title>
 </head>
 <body>
-<%@ include file = "header/header.jsp" %>
-<h1>메인페이지</h1>
+
+<%@ include file = "page/main_page.jsp" %>
 <%@ include file = "bottom/footer.jsp" %>
 </body>
+
 </html>
