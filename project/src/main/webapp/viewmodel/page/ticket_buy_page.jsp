@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
- <%@ include file = "/viewmodel/header/header2.jsp" %>
+<%@ include file="/viewmodel/header/header2.jsp" %>
+<%@ page import="java.sql.*, java.io.StringWriter, java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +36,13 @@
         .seat-info {
             margin-top: 20px;
         }
+        .container {
+            margin-top: 10%;
+        }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <h1 class="mb-4">FC라플 vs FC의정부</h1>
 
         <!-- 경기 정보 -->
@@ -48,9 +52,32 @@
                     <div class="seats">
                         <%-- 좌석을 반복하여 생성 --%>
                         <%
-                        for (int i = 1; i <= 100; i++) {
-                            String occupiedClass = (i % 10 == 0) ? "occupied" : "";
-                            out.println("<div class='seat " + occupiedClass + "' data-seat='" + i + "'></div>");
+                        Connection conn = null;
+                        Statement stmt = null;
+                        ResultSet rs = null;
+                        try {
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/seongdb", "root", "12rhtmdqja");
+                            out.println("DB 연결 성공<br>"); // 디버깅 로그
+                            stmt = conn.createStatement();
+                            rs = stmt.executeQuery("SELECT seat_id, is_occupied FROM seats");
+                            out.println("쿼리 실행 성공<br>"); // 디버깅 로그
+
+                            while (rs.next()) {
+                                int seatId = rs.getInt("seat_id");
+                                boolean isOccupied = rs.getBoolean("is_occupied");
+                                String occupiedClass = isOccupied ? "occupied" : "";
+                                out.println("<div class='seat " + occupiedClass + "' data-seat='" + seatId + "'></div>");
+                            }
+                        } catch (Exception e) {
+                            StringWriter sw = new StringWriter();
+                            PrintWriter pw = new PrintWriter(sw);
+                            e.printStackTrace(pw);
+                            out.print("오류 발생: " + sw.toString()); // 스택 트레이스를 문자열로 출력
+                        } finally {
+                            if (rs != null) rs.close();
+                            if (stmt != null) stmt.close();
+                            if (conn != null) conn.close();
                         }
                         %>
                     </div>
@@ -58,10 +85,9 @@
             </div>
             <div class="col-md-4">
                 <ul class="list-group seat-info">
-            	     <li class="list-group-item">운영진석(A1-A10)  </li>
-                    <li class="list-group-item">VIP석(B1-B10)  </li>
-                    <li class="list-group-item">일반석(C1-H10)  </li>
-                    
+                    <li class="list-group-item">운영진석(A1-A10)</li>
+                    <li class="list-group-item">VIP석(B1-B10)</li>
+                    <li class="list-group-item">일반석(C1-H10)</li>
                 </ul>
             </div>
         </div>
@@ -70,7 +96,7 @@
         <div class="d-flex justify-content-between">
             <button class="btn btn-success" id="autoAssign">자동배정</button>
             <button class="btn btn-primary" id="selectSeat">좌석선택</button>
-            <button class="btn btn-primary" id="selectSeat">티켓구매</button>
+            <button class="btn btn-primary" id="purchaseTicket">티켓구매</button>
         </div>
     </div>
 
@@ -106,8 +132,17 @@
             document.getElementById('selectSeat').addEventListener('click', () => {
                 alert('선택된 좌석: ' + Array.from(selectedSeats).join(', '));
             });
+
+            document.getElementById('purchaseTicket').addEventListener('click', () => {
+                const seatsToBook = Array.from(selectedSeats);
+                if (seatsToBook.length > 0) {
+                    const seatParam = seatsToBook.join(',');
+                    window.location.href = `bookSeats.jsp?seats=${seatParam}`;
+                } else {
+                    alert('선택된 좌석이 없습니다.');
+                }
+            });
         });
     </script>
 </body>
-  
 </html>

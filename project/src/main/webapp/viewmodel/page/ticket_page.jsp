@@ -18,11 +18,14 @@
         .match-buttons a {
             margin: 0 5px;
         }
+        .container {
+        	margin-top: 10%;
+        }
          
     </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <h1 class="mb-4">티켓 구매 페이지입니다.</h1>
 
         <!-- 날짜 선택 UI -->
@@ -69,7 +72,7 @@
                     <td rowspan="2">2024.06.09<br>R01,R02</td>
                     <td>16:30</td>
                     <td>
-                        <img src="ulsan_logo.png" alt="울산" width="30"> Fc라플 1 : 0 동국 <img src="jeonbuk_logo.png" alt="전북" width="30">
+                        <img src="ulsan_logo.png"  width="30"> Fc라플 1 : 0 동국 <img src="jeonbuk_logo.png" alt="" width="30">
                         <div class="match-status">경기종료</div>
                     </td>
                     <td>
@@ -85,7 +88,7 @@
                 <tr>
                     <td>19:00</td>
                     <td>
-                        <img src="suwon_logo.png" alt="FC라플" width="30"> FC라플 6 : 3 의정부FC <img src="incheon_logo.png" alt="인천" width="30">
+                        <img src="suwon_logo.png"  width="30"> FC라플 6 : 3 의정부FC <img src="incheon_logo.png"  width="30">
                         <div class="match-status">경기종료</div>
                     </td>
                     <td>
