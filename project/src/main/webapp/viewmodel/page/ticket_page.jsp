@@ -18,6 +18,7 @@
         .match-buttons a {
             margin: 0 5px;
         }
+         
     </style>
 </head>
 <body>
@@ -33,6 +34,9 @@
                 </select>
                 <select class="form-select d-inline-block" style="width: auto;">
                     <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
                     <!-- 추가 월 옵션 -->
                 </select>
             </div>
@@ -62,7 +66,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td rowspan="2">2024.06.09<br>R16</td>
+                    <td rowspan="2">2024.06.09<br>R01,R02</td>
                     <td>16:30</td>
                     <td>
                         <img src="ulsan_logo.png" alt="울산" width="30"> Fc라플 1 : 0 동국 <img src="jeonbuk_logo.png" alt="전북" width="30">
@@ -70,13 +74,13 @@
                     </td>
                     <td>
                         <div class="match-buttons">
-                            <a href="#" class="btn btn-primary">매치센터</a>
+                            <a href="https://map.naver.com/p/entry/place/18698407?c=15.00,0,0,0,adh&isMini=true&p=Nopupq8MmvYzjQntxn9Hmg,-163,10,80,Float" class="btn btn-primary">매치센터</a>
                             <a href="#" class="btn btn-info">경기영상</a>
                         </div>
                     </td>
-                    <td>skySports</td>
-                    <td>캐스터: 소준일<br>해설: 이상윤</td>
-                    <td>곤제 근린공원 <br>[관중수 5]</td>
+                    <td>동국대학교</td>
+                    <td>매니저 : 김삿갓<br>촬영: 김옥지</td>
+                    <td>동국대학교 대운동 <br>[관중수 55]</td>
                 </tr>
                 <tr>
                     <td>19:00</td>
@@ -86,14 +90,14 @@
                     </td>
                     <td>
                         <div class="match-buttons">
-                            <a href="#" class="btn btn-primary">매치센터</a>
+                            <a href="https://map.naver.com/p/entry/place/19236687?c=15.00,0,0,0,adh&p=myguGV5RB5GEqK9e47cn0g,-142.23,7.83,80,Float&isMini=true" class="btn btn-primary">매치센터</a>
                             <a href="#" class="btn btn-info">경기영상</a>
                             <a href="ticket_buy_page.jsp" class="btn btn-info">경기예매</a>
                         </div>
                     </td>
-                    <td>COUPANGPLAY</td>
-                    <td>캐스터: 배성재<br>해설: 한준희</td>
-                    <td>수원 종합<br>[관중수 7,511]</td>
+                    <td>서경대학교</td>
+                     <td>매니저 : 김삿갓<br>촬영: 김옥지</td>
+                      <td>곤제 근린공원 <br>[관중수 5]</td>
                 </tr>
             </tbody>
         </table>
@@ -104,5 +108,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
-<%@ include file="/viewmodel/bottom/footer.jsp" %>
+ 
 </html>

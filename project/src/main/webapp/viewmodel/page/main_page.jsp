@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   
+    
 <!DOCTYPE html>
 <html>
 <head>
+  
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <style>
     .container {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
     }
     .main-image {
@@ -17,6 +21,7 @@
     .sub-images {
         display: flex;
         justify-content: space-between;
+        height: 100%;
     }
     .sub-images img {
         width: 32%;
@@ -37,4 +42,5 @@
     </div>
 </div>
 </body>
+   
 </html>
