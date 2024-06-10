@@ -54,18 +54,18 @@
                     <th>날짜</th>
                     <th>시간</th>
                     <th>매치</th>
-                    <th>경기센터</th>
-                    <th>중계방송사</th>
-                    <th>중계진</th>
+                    <th>경기장</th>
+                    <th>촬영여부</th>
+                    <th>오는사람</th>
                     <th>장소</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td rowspan="2">2024.06.01<br>R16</td>
+                    <td rowspan="2">2024.06.09<br>R16</td>
                     <td>16:30</td>
                     <td>
-                        <img src="ulsan_logo.png" alt="울산" width="30"> 울산 1 : 0 전북 <img src="jeonbuk_logo.png" alt="전북" width="30">
+                        <img src="ulsan_logo.png" alt="울산" width="30"> Fc라플 1 : 0 동국 <img src="jeonbuk_logo.png" alt="전북" width="30">
                         <div class="match-status">경기종료</div>
                     </td>
                     <td>
@@ -76,18 +76,19 @@
                     </td>
                     <td>skySports</td>
                     <td>캐스터: 소준일<br>해설: 이상윤</td>
-                    <td>울산 문수<br>[관중수 29,007]</td>
+                    <td>곤제 근린공원 <br>[관중수 5]</td>
                 </tr>
                 <tr>
                     <td>19:00</td>
                     <td>
-                        <img src="suwon_logo.png" alt="수원FC" width="30"> 수원FC 3 : 1 인천 <img src="incheon_logo.png" alt="인천" width="30">
+                        <img src="suwon_logo.png" alt="FC라플" width="30"> FC라플 6 : 3 의정부FC <img src="incheon_logo.png" alt="인천" width="30">
                         <div class="match-status">경기종료</div>
                     </td>
                     <td>
                         <div class="match-buttons">
                             <a href="#" class="btn btn-primary">매치센터</a>
                             <a href="#" class="btn btn-info">경기영상</a>
+                            <a href="ticket_buy_page.jsp" class="btn btn-info">경기예매</a>
                         </div>
                     </td>
                     <td>COUPANGPLAY</td>
