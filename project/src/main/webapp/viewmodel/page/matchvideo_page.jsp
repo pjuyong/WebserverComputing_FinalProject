@@ -19,12 +19,18 @@
             height: 300px; /* 높이 설정 */
             margin-left: auto; /* 수평 중앙 정렬 */
             margin-right: auto; /* 수평 중앙 정렬 */
+             margin-top: 10%;
         }
+        .container {
+	 margin-top: 10%;
+	 margin-bottom: 10%;
+}
     </style>
 </head>
 <body>
-<h1>경기영상 페이지</h1>
+
   <div class="container">
+  <h1>경기영상 페이지</h1>
         <div class="row">
             <div class="col-md-4">
                 <div class="white-container">
