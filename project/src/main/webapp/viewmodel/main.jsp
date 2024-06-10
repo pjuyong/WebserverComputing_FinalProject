@@ -10,7 +10,7 @@
 <body>
 
 <%@ include file = "page/main_page.jsp" %>
-<%@ include file = "bottom/footer.jsp" %>
 </body>
 
+<%@ include file = "bottom/footer.jsp" %>
 </html>
