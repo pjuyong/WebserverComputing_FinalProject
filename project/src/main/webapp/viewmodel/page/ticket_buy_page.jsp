@@ -35,10 +35,15 @@
         }
         .seat-info {
             margin-top: 20px;
+          
         }
         .container {
             margin-top: 10%;
         }
+         .seat.blue {
+        background-color: #007bff; /* 파란색 */
+    }
+    	
     </style>
 </head>
 <body>
@@ -50,7 +55,7 @@
             <div class="col-md-8">
                 <div class="stadium">
                     <div class="seats">
-                        <%-- 좌석을 반복하여 생성 --%>
+                        
                         <%
                         Connection conn = null;
                         Statement stmt = null;
@@ -58,10 +63,10 @@
                         try {
                             Class.forName("com.mysql.cj.jdbc.Driver");
                             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/seongdb", "root", "12rhtmdqja");
-                            out.println("DB 연결 성공<br>"); // 디버깅 로그
+                            
                             stmt = conn.createStatement();
                             rs = stmt.executeQuery("SELECT seat_id, is_occupied FROM seats");
-                            out.println("쿼리 실행 성공<br>"); // 디버깅 로그
+                             
 
                             while (rs.next()) {
                                 int seatId = rs.getInt("seat_id");
@@ -85,7 +90,7 @@
             </div>
             <div class="col-md-4">
                 <ul class="list-group seat-info">
-                    <li class="list-group-item">운영진석(A1-A10)</li>
+                    <li class="list-group-item">운영진석(A1-A10)  <button class="btn btn-success" id="seeseat">좌석 보기</button></li>
                     <li class="list-group-item">VIP석(B1-B10)</li>
                     <li class="list-group-item">일반석(C1-H10)</li>
                 </ul>
@@ -130,16 +135,44 @@
             });
 
             document.getElementById('selectSeat').addEventListener('click', () => {
-                alert('선택된 좌석: ' + Array.from(selectedSeats).join(', '));
-            });
+                const seatsToBook = Array.from(selectedSeats);
+                if (seatsToBook.length > 0) {
+                    const seatParam = seatsToBook.join(',');
 
+                    fetch('../page/updateSeats.jsp', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: 'seats=' + encodeURIComponent(seatParam)
+                    }).then(response => response.text())
+                    .then(data => {
+                        if (data === 'success') {
+                            alert('선택된 좌석: ' + seatsToBook.join(', '));
+                        } else {
+                            alert(   data);
+                        }
+                    }).catch(error => {
+                        alert('서버와 통신 중 오류가 발생했습니다: ' + error.message);
+                    });
+                } else {
+                    alert('선택된 좌석이 없습니다.');
+                }
+            });
             document.getElementById('purchaseTicket').addEventListener('click', () => {
                 const seatsToBook = Array.from(selectedSeats);
                 if (seatsToBook.length > 0) {
                     const seatParam = seatsToBook.join(',');
-                    window.location.href = `bookSeats.jsp?seats=${seatParam}`;
+                    window.location.href = '/project/viewmodel/page/ticket_buy_detail_page.jsp?seats=' + encodeURIComponent(seatParam);
                 } else {
                     alert('선택된 좌석이 없습니다.');
+                }
+            });
+            
+            document.getElementById('seeseat').addEventListener('click', () => {
+                const allSeats = document.querySelectorAll('.seat');
+                for (let i = 9; i < allSeats.length; i += 10) {
+                    allSeats[i].classList.toggle('blue');
                 }
             });
         });
