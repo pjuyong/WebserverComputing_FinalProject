@@ -26,9 +26,7 @@
       <li class="nav-item">
         <a class="nav-link" href="ticket_page.jsp">일정예매</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="other_page.jsp">이외활동</a>
-      </li>
+      
         <li class="nav-item">
         <a class="nav-link" href="other_page.jsp">게시판</a>
       </li>
