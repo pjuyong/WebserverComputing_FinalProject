@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+	function goToMainAfterLogin() {
+		window.location.href = '../mainAfterLogin.jsp';
+	}
+	
 	function goToMain() {
 		window.location.href = '../main.jsp';
 	}
@@ -31,6 +35,7 @@
 	    
 	    if(loginRs.next()) {
 	    	login = true;
+	    	session.setAttribute("username",username2); // 로그인을 한 사용자의 아이디 이름을 세션에 저장(로그인한 서버 상태를 유지하기 위함)
 	    }
 	} catch (SQLException e) {
 		out.println("예외가 발생하였습니다.<br>");
@@ -49,7 +54,7 @@
 	
 	if(login) {
 %>
-<p>로그인에 성공했습니다.<input type="button" value="메인으로 이동" onclick="goToMain()"></p>
+<p>로그인에 성공했습니다.<input type="button" value="메인으로 이동" onclick="goToMainAfterLogin()"></p>
 <%
 	} else {
 %>

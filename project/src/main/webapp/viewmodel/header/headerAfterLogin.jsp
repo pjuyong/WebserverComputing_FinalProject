@@ -34,20 +34,33 @@
         <a class="nav-link" href="./page/ticket_page.jsp">일정예매</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./page/other_page.jsp">이외활동</a>
+        <a class="nav-link" href="other_page.jsp">예매확인</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="other_page.jsp">게시판</a>
+      </li>
+      
     </ul>
     <form class="form-inline my-2 my-lg-0 mr-auto">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <ul class="navbar-nav">
+    <%
+    	String username = (String) session.getAttribute("username");
+    	if(username!=null) {
+    %>
       <li class="nav-item">
-        <a class="nav-link" href="./onborading/login.jsp">Login</a>
+        <a class="nav-link" href="#">환영합니다, <%=username %> 님!</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./onborading/insert.jsp">Sign Up</a>
+        <a class="nav-link" href="./onborading/logout.jsp">Logout</a>
       </li>
+      <%
+      	} else {
+      		response.sendRedirect("./onborading/login.jsp");
+      	}
+      %>
     </ul>
   </div>
 </nav>
