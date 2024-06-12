@@ -20,26 +20,23 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="./main.jsp">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../mainAfterLogin.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  href="./page/introduce_page.jsp">동아리 소개</a>
+        <a class="nav-link"  href="introduce_page.jsp">동아리 소개</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./page/matchvideo_page.jsp">경기영상</a>
+        <a class="nav-link" href="matchvideo_page.jsp">경기영상</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./page/ticket_page.jsp">일정예매</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="other_page.jsp">예매확인</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="other_page.jsp">게시판</a>
+        <a class="nav-link" href="ticket_page.jsp">일정예매</a>
       </li>
       
+        <li class="nav-item">
+        <a class="nav-link" href="other_page.jsp">게시판</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 mr-auto">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -51,10 +48,10 @@
     	if(username!=null) {
     %>
       <li class="nav-item">
-        <a class="nav-link" href="./page/mypage.jsp">환영합니다, <%=username %> 님!</a>
+        <a class="nav-link" href="#">환영합니다, <%=username %> 님!</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./onborading/logout.jsp">Logout</a>
+        <a class="nav-link" href="../onborading/logout.jsp">Logout</a>
       </li>
       <%
       	} else {

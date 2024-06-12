@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/viewmodel/header/header2.jsp" %>
+<%@ include file="/viewmodel/header/headerAfterLogin2.jsp" %>
 <%@ page import="java.sql.*, java.io.StringWriter, java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
@@ -134,6 +134,8 @@
                 }
             });
 
+            
+
             document.getElementById('selectSeat').addEventListener('click', () => {
                 const seatsToBook = Array.from(selectedSeats);
                 if (seatsToBook.length > 0) {
@@ -150,7 +152,7 @@
                         if (data === 'success') {
                             alert('선택된 좌석: ' + seatsToBook.join(', '));
                         } else {
-                            alert(   data);
+                            alert(data);
                         }
                     }).catch(error => {
                         alert('서버와 통신 중 오류가 발생했습니다: ' + error.message);
@@ -159,6 +161,12 @@
                     alert('선택된 좌석이 없습니다.');
                 }
             });
+
+            
+            
+            
+            
+            
             document.getElementById('purchaseTicket').addEventListener('click', () => {
                 const seatsToBook = Array.from(selectedSeats);
                 if (seatsToBook.length > 0) {
