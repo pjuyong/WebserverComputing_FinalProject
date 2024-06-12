@@ -7,9 +7,9 @@
 	ResultSet loginRs = null;
 	
 	try {
-		String url = "jdbc:mysql://localhost:3306/seongDB";
+		String url = "jdbc:mysql://localhost:3306/ProjectDB";
 		String user = "root";
-		String password = "12rhtmdqja";
+		String password = "1234";
 		
     	Class.forName("com.mysql.cj.jdbc.Driver");
     	loginConn = DriverManager.getConnection(url, user, password);

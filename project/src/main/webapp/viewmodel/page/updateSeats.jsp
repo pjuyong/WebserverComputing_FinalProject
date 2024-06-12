@@ -14,7 +14,7 @@
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/seongdb", "root", "12rhtmdqja");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProjectDB", "root", "1234");
 
         pstmt = conn.prepareStatement(updateSQL);
         for (String seat : seatArray) {

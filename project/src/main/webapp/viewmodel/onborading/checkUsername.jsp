@@ -11,7 +11,7 @@
 <script>
     function checkUsername(result) {
         if (result === "exists") {
-
+        	alert("이미 존재하는 아이디입니다.");
             window.history.back();
         } else {
             alert("사용 가능한 아이디입니다.");
@@ -34,7 +34,7 @@
         checkPstmt.setString(1, username);
         rs = checkPstmt.executeQuery();
 
-        if (rs.next()) {
+        if (rs.next() === true) {
             // 중복된 아이디가 존재
             result = "exists";
         }

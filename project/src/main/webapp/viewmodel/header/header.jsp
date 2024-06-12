@@ -33,9 +33,6 @@
       <li class="nav-item">
         <a class="nav-link" href="./page/ticket_page.jsp">일정예매</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./page/other_page.jsp">이외활동</a>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 mr-auto">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
