@@ -53,9 +53,9 @@
 
     <!-- 게시글 목록 출력 -->
     <%
-        String url = "jdbc:mysql://localhost:3306/seongDB"; // 데이터베이스 URL
+        String url = "jdbc:mysql://localhost:3306/ProjectDB"; // 데이터베이스 URL
         String user = "root"; // 데이터베이스 사용자명
-        String password = "12rhtmdqja"; // 데이터베이스 비밀번호
+        String password = "1234"; // 데이터베이스 비밀번호
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;

@@ -7,13 +7,13 @@
 	ResultSet rs = null;
 	
 	try {
-		String url = "jdbc:mysql://localhost:3306/seongDB";
+		String url = "jdbc:mysql://localhost:3306/ProjectDB";
 		String user = "root";
-		String password = "12rhtmdqja";
+		String password = "1234";
 		
     	Class.forName("com.mysql.cj.jdbc.Driver");
     	conn = DriverManager.getConnection(url, user, password);
-    	//out.println("데이터베이스 연동 성공!<br>");
+    	out.println("데이터베이스 연동 성공!<br>");
     	
 	} catch (SQLException e) {
     	out.println("데이터베이스 연동실패.<br>");

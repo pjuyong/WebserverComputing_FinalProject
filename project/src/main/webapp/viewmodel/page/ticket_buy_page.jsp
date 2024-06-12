@@ -62,7 +62,7 @@
                         ResultSet rs = null;
                         try {
                             Class.forName("com.mysql.cj.jdbc.Driver");
-                            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/seongdb", "root", "12rhtmdqja");
+                            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProjectDB", "root", "1234");
                             
                             stmt = conn.createStatement();
                             rs = stmt.executeQuery("SELECT seat_id, is_occupied FROM seats");
