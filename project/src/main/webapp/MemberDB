@@ -15,7 +15,6 @@ desc LastPlayMember;
 
 insert into LastPlayMember values('박주용', '소프트웨어', 11, 'MF');
 insert into LastPlayMember values('최민석', '소프트웨어', 8, 'DF');
-
 insert into LastPlayMember values('박성영', '소프트웨어', 6, 'MF');
 insert into LastPlayMember values('박승재', '전자공학', 20, 'MF');
 insert into LastPlayMember values('고승범', '소프트웨어', 9, 'FW');

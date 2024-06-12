@@ -12,8 +12,10 @@
     function checkUsername(result) {
         if (result === "exists") {
             alert("이미 사용 중인 아이디입니다.");
+            window.history.back();
         } else {
             alert("사용 가능한 아이디입니다.");
+            window.history.back();
         }
     }
 </script>

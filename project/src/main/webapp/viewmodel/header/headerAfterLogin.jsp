@@ -42,12 +42,21 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <ul class="navbar-nav">
+    <%
+    	String username = (String) session.getAttribute("username");
+    	if(username!=null) {
+    %>
       <li class="nav-item">
-        <a class="nav-link" href="./onborading/login.jsp">Login</a>
+        <a class="nav-link" href="#">환영합니다, <%=username %> 님!</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./onborading/insert.jsp">Sign Up</a>
+        <a class="nav-link" href="./onborading/logout.jsp">Logout</a>
       </li>
+      <%
+      	} else {
+      		response.sendRedirect("./onborading/login.jsp");
+      	}
+      %>
     </ul>
   </div>
 </nav>
