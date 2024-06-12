@@ -5,8 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	function goToMain() {
+		window.location.href = '../main.jsp';
+	}
+</script>
 </head>
 <body>
-	<p>로그인을 성공했습니다.
+	<p>회원가입을 성공했습니다.<input type="button" value="메인으로 이동" onclick="goToMain()"></p>
 </body>
 </html>
