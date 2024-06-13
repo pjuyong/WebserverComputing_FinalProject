@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*, java.util.*" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -44,23 +45,36 @@
 <body>
 
 <%
-    // 선택된 좌석 정보 및 기타 매개변수 수신
-    String seats = request.getParameter("seats");
-    // 필요한 다른 매개변수를 여기서 처리 (예: 티켓 금액, 예매 수수료 등)
-%>
+    String username = (String) session.getAttribute("username"); // 세션에 저장된 사용자 이름
+    if (username != null) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/seongdb", "root", "12rhtmdqja");
 
+            pstmt = conn.prepareStatement("SELECT seat_id FROM user_seats WHERE username = ?");
+            pstmt.setString(1, username);
+            rs = pstmt.executeQuery();
+
+            List<Integer> seatIds = new ArrayList<>();
+            while (rs.next()) {
+                seatIds.add(rs.getInt("seat_id"));
+            }
+
+            if (!seatIds.isEmpty()) {
+%>
 <div class="container">
     <div class="ticket-container">
         <div class="ticket-header">
-            <img src="path/to/team1_logo.png" alt="Team 1 Logo" style="width: 50px;">
-            <img src="path/to/team2_logo.png" alt="Team 2 Logo" style="width: 50px;">
-            <h2>FC라플 vs FC의정부</h2>
-            <p>곤제근린공</p>
-            <p>2024.06.10() 20:00</p>
+            <h2>FC수원 vs FC광주</h2>
+            <p>수원 월드컵 경기장</p>
+            <p>2024.06.15(금) 20:00</p>
         </div>
         <div class="ticket-info">
             <strong>예매정보</strong>
-            <span>A-1석 <%= seats %></span>
+            <span>A-1석 <%= seatIds.toString().replace("[", "").replace("]", "") %></span>
         </div>
         <div class="ticket-info">
             <strong>티켓금액</strong>
@@ -74,28 +88,38 @@
             <strong>배송료</strong>
             <span>2,000</span>
         </div>
-        
         <div class="total-cost">
             총결제: 20,000
         </div>
         <div class="cancellation-info">
             <p>취소기한: 2024.06.15 17:00</p>
             <p>취소수수료: 티켓금액의 0~30%. [<a href="#">상세보기</a>]</p>
-              <button class="btn btn-primary" id="OKButton">티켓구매</button>
+            <button class="btn btn-primary" id="OKButton">티켓구매</button>
         </div>
     </div>
     <script>
-    document.getElementById('OKButton').addEventListener('click', () => {
-        alert("티켓 구매가 완료되었습니다.");
-        window.location.href = '/project/viewmodel/main.jsp';
-    });
-    
-    
+        document.getElementById('OKButton').addEventListener('click', () => {
+            alert("티켓 구매가 완료되었습니다.");
+            window.location.href = '/project/viewmodel/mainAfterLogin.jsp';
+        });
     </script>
-  
-    
-     
 </div>
+<%
+            } else {
+                out.println("구매한 좌석이 없습니다.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            out.println("오류 발생: " + e.getMessage());
+        } finally {
+            if (rs != null) rs.close();
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+        }
+    } else {
+        out.println("로그인이 필요합니다.");
+    }
+%>
 
 </body>
 </html>

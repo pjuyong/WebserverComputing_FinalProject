@@ -77,7 +77,7 @@
             </div>
              <div class="col-md-4">
                 <div class="white-container">
-                    <h1>축구 경기</h1>
+                    <h1>동아리 경기</h1>
                   
                     <p>사진</p>
                  
@@ -88,7 +88,7 @@
             </div>
              <div class="col-md-4">
                 <div class="white-container">
-                    <h1>동아리 경기</h1>
+                    <h1>축구 경기</h1>
                   
                     <p>사진</p>
              
