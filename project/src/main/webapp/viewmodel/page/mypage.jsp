@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, java.util.*" %>
-
+<%@ include file = "/viewmodel/header/headerAfterLogin2.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 <body>
 <h1>마이페이지입니다.</h1>
 <%
-    String username = (String) session.getAttribute("username"); // 세션에 저장된 사용자 이름
+  
 
     if (username != null) {
         Connection conn = null;

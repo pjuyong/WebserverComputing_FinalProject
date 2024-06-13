@@ -33,10 +33,14 @@
         width: 32%;
         height: auto;
     }
+    .head {
+    	display: flex;
+    	justify-content: center;
+    }
 </style>
 </head>
 <body>
-<h1> 저희 동아리페이지에 오신걸 환영합니다!</h1>
+<h1 class="head"> 저희 동아리페이지에 오신걸 환영합니다!</h1>
 <div class="container">
     <div class="main-image">
     

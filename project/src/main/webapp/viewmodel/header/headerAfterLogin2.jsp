@@ -38,7 +38,7 @@
       </li>
       
         <li class="nav-item">
-        <a class="nav-link" href="other_page.jsp">게시판</a>
+        <a class="nav-link" href="board.jsp">게시판</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 mr-auto">

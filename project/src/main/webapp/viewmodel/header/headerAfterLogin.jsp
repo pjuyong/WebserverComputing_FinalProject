@@ -37,7 +37,7 @@
         <a class="nav-link" href="./page/mypage.jsp">예매확인</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./other_page.jsp">게시판</a>
+        <a class="nav-link" href="./page/other_page.jsp">게시판</a>
       </li>
       
     </ul>
