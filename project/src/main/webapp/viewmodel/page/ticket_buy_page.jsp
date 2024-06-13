@@ -39,16 +39,27 @@
         }
         .container {
             margin-top: 10%;
+            margin-bottom: 10%;
         }
          .seat.blue {
         background-color: #007bff; /* 파란색 */
     }
+ .col-md-4 {
+            padding: 20px; /* 컨테이너의 내부 여백을 추가 */
+        }
+        .list-group-item {
+            margin-bottom: 30px; /* 각 항목 간의 간격을 추가 */
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            margin-top: 5px; /* 버튼 위쪽에 간격 추가 */
     	
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-4">FC라플 vs FC의정부</h1>
+        <h1 class="mb-4">FC수원 vs FC광주</h1>
 
         <!-- 경기 정보 -->
         <div class="row mb-4">
@@ -90,9 +101,9 @@
             </div>
             <div class="col-md-4">
                 <ul class="list-group seat-info">
-                    <li class="list-group-item">운영진석(A1-A10)  <button class="btn btn-success" id="seeseat">좌석 보기</button></li>
-                    <li class="list-group-item">VIP석(B1-B10)</li>
-                    <li class="list-group-item">일반석(C1-H10)</li>
+                    <li class="list-group-item">운영진석  <button class="btn btn-success" id="seeseat">좌석 보기</button></li>
+                    <li class="list-group-item">VIP석 <button class="btn btn-success" id="seeseat2">좌석 보기</button></li>
+                    <li class="list-group-item">일반석<button class="btn btn-success" id="seeseat3">좌석 보기</button></li>
                 </ul>
             </div>
         </div>
@@ -183,6 +194,26 @@
                     allSeats[i].classList.toggle('blue');
                 }
             });
+            
+            document.getElementById('seeseat2').addEventListener('click', () => { 
+            	 const allSeats = document.querySelectorAll('.seat');
+                 for (let i = 8; i < allSeats.length; i += 10) {
+                     allSeats[i].classList.toggle('blue');
+                 }
+            });
+            
+            
+            document.getElementById('seeseat3').addEventListener('click', () => { 
+                const allSeats = document.querySelectorAll('.seat');
+                for (let i = 0; i < allSeats.length; i++) {
+                    if (i % 10 === 8 || i % 10 === 9) {
+                        continue;
+                    }
+                    allSeats[i].classList.toggle('blue');
+                }
+            });
+            
+            
         });
     </script>
 </body>
